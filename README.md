@@ -1,4 +1,4 @@
-# Hyoen Violet Theme
+# Hyoen Violet LightDM Theme
 © 2023 Hyeon.js, All rights reserved.
 
-- lightdm-webkit2-greeter theme
+- lightdm nody-greeter theme
