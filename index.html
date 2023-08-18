@@ -25,23 +25,41 @@
         margin: 0px;
         width: 100%;
         height: 100%;
+        background-image: url('./images/background.jpg');
         background-size: 100% 100%;
     }
 
-    div.body {
+    div.parent {
         height: 100%;
     }
 
-    div.title {
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        background-color: #424242AA;
-        text-align: right;
+    div.content {
+        background-color: #B388FF42;
+        padding: 16px;
+        border-radius: 16px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        align-content: center;
+        width: 640px;
+        height: 360px;
     }
-    div.title > div {
-        display: inline-block;
-        padding: 4px 10px;
+    
+    div.left {
+        float: left;
+        width: 50%;
+        height: 100%;
+        display: block;
+        position: relative;
+    }
+
+    div.right {
+        float: right;
+        width: 50%;
+        height: 100%;
+        display: block;
+        position: relative;
     }
 
     .dropdown {
@@ -69,45 +87,41 @@
 </style>
 
 <body>
-    <div class="title">
+    <!-- <div class="title">
         <div class="dropdown">
             <span onclick="openSessionMenu();">Session</span>
             <div class="dropdown-content" id="session_menu">
                 
             </div>
         </div>
-        <div class="dropdown">
-            <span onclick="openPowerMenu();">Power</span>
-            <div class="dropdown-content" id="power_menu">
-                <div onclick="lightdm.restart();">Reboot</div>
-                <div onclick="lightdm.shutdown();">Shutdown</div>
-            </div>
+    </div> -->
+    <div class="parent">
+        <div class="content">
+            <div class="left">1</div>
+            <div class="right">2</div>
         </div>
-    </div>
-    <div class="body">
-
     </div>
     <script>
 
-        window.addEventListener("load", (e) => setTimeout(() => {
-            var src = "";
-            for (var n = 0; n < lightdm.sessions.length; n++) {
-                src += "<div onclick='selectSession(" + n + ");'>" + lightdm.sessions[n].name + "</div>"
-            }
-            document.getElementById("session_menu").innerHTML = src;
-        }, 100));
+        // window.addEventListener("load", (e) => setTimeout(() => {
+        //     var src = "";
+        //     for (var n = 0; n < lightdm.sessions.length; n++) {
+        //         src += "<div onclick='selectSession(" + n + ");'>" + lightdm.sessions[n].name + "</div>"
+        //     }
+        //     document.getElementById("session_menu").innerHTML = src;
+        // }, 100));
 
-        function openSessionMenu() {
-            var element = document.getElementById("session_menu");
-            if (element.style.display == 'block') element.style.display = 'none';
-            else element.style.display = 'block';
-        }
+        // function openSessionMenu() {
+        //     var element = document.getElementById("session_menu");
+        //     if (element.style.display == 'block') element.style.display = 'none';
+        //     else element.style.display = 'block';
+        // }
 
-        function openPowerMenu() {
-            var element = document.getElementById("power_menu");
-            if (element.style.display == 'block') element.style.display = 'none';
-            else element.style.display = 'block';
-        }
+        // function openPowerMenu() {
+        //     var element = document.getElementById("power_menu");
+        //     if (element.style.display == 'block') element.style.display = 'none';
+        //     else element.style.display = 'block';
+        // }
     </script>
 </body>
 
