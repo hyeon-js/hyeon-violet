@@ -1,0 +1,6 @@
+[theme]
+name=hyeon-violet
+description=lightdm theme by Hyeon.js
+engine=nody-greeter
+url=index.html
+session=plasma
